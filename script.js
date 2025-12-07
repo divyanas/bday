@@ -308,4 +308,5 @@ envelope.addEventListener("click", () => {
   envelope.classList.add("open");      // open the flap
   photos.classList.remove("hidden");   // show photos below
   quote.textContent = "Memories revealed 💕";
+
 });
