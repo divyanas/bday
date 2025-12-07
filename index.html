@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Happy Birthday 🎉</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&family=Great+Vibes&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="theme-toggle" aria-label="Toggle theme" title="Toggle theme">☀️</div>
+
+  <!-- Gate / Unlock -->
+  <section id="gate" class="full-center">
+    <div class="gate-card">
+      <h1 class="script">A little surprise for you ✨</h1>
+      <p class="sub">Enter your name to unlock your surprise.</p>
+      <form id="unlock-form">
+        <input type="text" id="unlock-input" placeholder="Your name…" autocomplete="off" />
+        <button type="submit" id="unlock-btn">Unlock</button>
+      </form>
+      <p id="gate-hint">Hint: How will I call you?</p>
+      <div id="gate-error" role="alert"></div>
+    </div>
+  </section>
+
+  <!-- Main content -->
+  <main id="content" class="hidden">
+    <!-- Hero -->
+    <section class="hero">
+      <div class="hero-text">
+        <h1 class="script" id="hero-name">Happy Birthday!</h1>
+        <p class="sub" id="hero-sub">Counting down to your special moment…</p>
+        <div id="countdown" aria-live="polite">
+          <div class="time"><span id="d">00</span><label>Days</label></div>
+          <div class="time"><span id="h">00</span><label>Hours</label></div>
+          <div class="time"><span id="m">00</span><label>Minutes</label></div>
+          <div class="time"><span id="s">00</span><label>Seconds</label></div>
+        </div>
+        <div class="controls">
+          <button id="celebrate-btn">click to Celebrate now 🎉</button>
+          <button id="mute-btn">Mute 🔈</button>
+        </div>
+      </div>
+      <canvas id="confetti"></canvas>
+      <canvas id="balloons"></canvas>
+      <audio id="bg-audio" src="c:\Users\asdiv\OneDrive\Desktop\bday\sunrise_theme_tone.mp3" loop preload="auto"></audio>
+    </section>
+
+    <!-- Message flow -->
+    <section class="message">
+      <h2 class="script">Just for you</h2>
+      <div id="typewriter" aria-live="polite"></div>
+      <div class="actions">
+        <button id="download-letter">Download letter 💌</button>
+      </div>
+    </section>
+
+    <!-- Gallery -->
+    <section class="gallery">
+      <h2 class="script">Our little moments</h2>
+      
+      <div id="envelope" class="envelope">
+        <!-- Envelope body -->
+        <div class="body"></div>
+         
+        <!-- Flap (inverted triangle) that flips upward on click -->
+        <div class="flap"></div>
+          
+        <!-- Heart centered on the body, does not rotate -->
+        <div class="heart"></div>
+      </div>
+    
+  <p class="reveal-quote">Click to reveal ❤️</p>
+
+  <div id="photo-stack" class="photos hidden">
+    <img src="C:\Users\asdiv\OneDrive\Desktop\bday\img1.jpg" alt="Memory 1">
+    <img src="C:\Users\asdiv\OneDrive\Desktop\bday\img2.jpg" alt="Memory 2">
+    <img src="C:\Users\asdiv\OneDrive\Desktop\bday\img3.jpg" alt="Memory 3">
+  </div>
+</section>
+
+    <!-- Timeline -->
+    <section class="timeline">
+      <h2 class="script">A tiny timeline</h2>
+      <div class="line">
+        <div class="moment">
+          <span class="dot"></span>
+          <div class="content">
+            <h3>First hello</h3>
+            <p>Two hearts noticing each other for the first time.</p>
+          </div>
+        </div>
+        <div class="moment">
+          <span class="dot"></span>
+          <div class="content">
+            <h3>Inside jokes</h3>
+            <p>The kind that still makes us laugh when no one else gets it.</p>
+          </div>
+        </div>
+        <div class="moment">
+          <span class="dot"></span>
+          <div class="content">
+            <h3>Growing together</h3>
+            <p>Learning, unlearning, and choosing each other—every day.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <p>Made with love by <span id="footer-name">APPU</span></p>
+      <p> • <button id="scroll-top">Back to top ⤴️</button></p>
+    </footer>
+  </main>
+
+  <!-- Modal -->
+  <div id="modal" class="hidden" role="dialog" aria-modal="true">
+    <div class="modal-content">
+      <button id="modal-close" aria-label="Close">✕</button>
+      <img id="modal-img" alt="">
+      <p id="modal-caption"></p>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
