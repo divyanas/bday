@@ -28,6 +28,7 @@ const modalImg = document.getElementById("modal-img");
 const modalCaption = document.getElementById("modal-caption");
 const modalClose = document.getElementById("modal-close");
 const SENDER_NAME = "APPU"; // <-- your name here
+const BIRTHDAY_AT = new Date("2025-12-14T00:00:00+00:00");
 
 // Gate / Unlock
 form.addEventListener("submit", (e) => {
@@ -310,3 +311,4 @@ envelope.addEventListener("click", () => {
   quote.textContent = "Memories revealed 💕";
 
 });
+
