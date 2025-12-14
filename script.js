@@ -1,6 +1,7 @@
 // Personalization
 const ALLOWED_NAMES = ["Ranjith", "Ranjith Mama", "MAMA", "Ranjith mama", "mama", "Mama", "ranjith mama"]; // add more variations
 const BIRTHDAY_AT = new Date(Date.UTC(2025, 11, 13, 18, 30, 0)); // Dec is month 11 (0-based
+let hasCelebrated = false;
 
 // Elements
 const gate = document.getElementById("gate");
@@ -242,6 +243,9 @@ muteBtn.addEventListener("click", () => {
 
 // Celebration flow
 function autoCelebrate() {
+  if (hasCelebrated) return;
+  hasCelebrated = true;
+
   heroSub.textContent = "It’s time. Happy Birthday! 🎂";
   fireConfetti(5000);
   fireBalloons(5000);
@@ -249,6 +253,8 @@ function autoCelebrate() {
   typeWriter();
 }
 celebrateBtn.addEventListener("click", () => {
+  if (!hasCelebrated) hasCelebrated = true;
+
   heroSub.textContent = "You pressed the magic button. Let’s celebrate!";
   fireConfetti(4000);
   fireBalloons(5000);
@@ -311,5 +317,6 @@ envelope.addEventListener("click", () => {
   quote.textContent = "Memories revealed 💕";
 
 });
+
 
 
