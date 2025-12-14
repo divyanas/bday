@@ -71,8 +71,7 @@ function startCountdown() {
     if (diff <= 0) {
       clearInterval(countdownInterval);
       setCountdown(0);
-      // Do NOT auto-celebrate here.
-      heroSub.textContent = "It’s time. Press the button to celebrate! 🎂";
+      // autoCelebrate(); ❌ removed so it won’t trigger on unlock
       return;
     }
     setCountdown(diff);
@@ -317,6 +316,7 @@ envelope.addEventListener("click", () => {
   quote.textContent = "Memories revealed 💕";
 
 });
+
 
 
 
