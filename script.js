@@ -1,6 +1,8 @@
 // Personalization
 const ALLOWED_NAMES = ["Ranjith", "Ranjith Mama", "MAMA", "Ranjith mama", "mama", "Mama", "ranjith mama"]; // add more variations
-const BIRTHDAY_AT = new Date(Date.UTC(2025, 11, 13, 18, 30, 0)); // Dec is month 11 (0-based
+const BIRTHDAY_AT = new Date(Date.UTC(2025, 11, 13, 18, 30, 0)); // Dec is month 11 (0-based)
+console.log("Target (local):", new Date(BIRTHDAY_AT).toString());
+console.log("Target (UTC):", new Date(BIRTHDAY_AT).toUTCString());
 let hasCelebrated = false;
 
 // Elements
@@ -317,6 +319,7 @@ envelope.addEventListener("click", () => {
   quote.textContent = "Memories revealed 💕";
 
 });
+
 
 
 
