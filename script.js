@@ -69,12 +69,11 @@ function startCountdown() {
     const now = new Date();
     const diff = BIRTHDAY_AT - now;
     if (diff <= 0) {
-  clearInterval(countdownInterval);
-  setCountdown(0);
-  // Do not auto-celebrate here
-  heroSub.textContent = "It’s time! Press the button to celebrate 🎂";
-  return;
-}
+      clearInterval(countdownInterval);
+      setCountdown(0);
+      heroSub.textContent = "It’s time! Press the button to celebrate 🎂";
+      return;
+    }
     setCountdown(diff);
   }
   tick();
@@ -244,16 +243,7 @@ muteBtn.addEventListener("click", () => {
 });
 
 // Celebration flow
-function autoCelebrate() {
-  if (hasCelebrated) return;
-  hasCelebrated = true;
 
-  heroSub.textContent = "It’s time. Happy Birthday! 🎂";
-  fireConfetti(5000);
-  fireBalloons(5000);
-  safePlayAudio();
-  typeWriter();
-}
 celebrateBtn.addEventListener("click", () => {
   heroSub.textContent = "You pressed the magic button. Let’s celebrate!";
   fireConfetti(4000);
@@ -316,6 +306,7 @@ envelope.addEventListener("click", () => {
   quote.textContent = "Memories revealed 💕";
 
 });
+
 
 
 
