@@ -69,11 +69,12 @@ function startCountdown() {
     const now = new Date();
     const diff = BIRTHDAY_AT - now;
     if (diff <= 0) {
-      clearInterval(countdownInterval);
-      setCountdown(0);
-      // autoCelebrate(); ❌ removed so it won’t trigger on unlock
-      return;
-    }
+  clearInterval(countdownInterval);
+  setCountdown(0);
+  // Do not auto-celebrate here
+  heroSub.textContent = "It’s time! Press the button to celebrate 🎂";
+  return;
+}
     setCountdown(diff);
   }
   tick();
@@ -254,7 +255,6 @@ function autoCelebrate() {
   typeWriter();
 }
 celebrateBtn.addEventListener("click", () => {
-  if (!hasCelebrated) hasCelebrated = true;
   heroSub.textContent = "You pressed the magic button. Let’s celebrate!";
   fireConfetti(4000);
   fireBalloons(5000);
@@ -316,6 +316,7 @@ envelope.addEventListener("click", () => {
   quote.textContent = "Memories revealed 💕";
 
 });
+
 
 
 
