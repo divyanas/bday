@@ -64,7 +64,6 @@ form.addEventListener("submit", (e) => {
 function capitalize(s) { return s.slice(0,1).toUpperCase() + s.slice(1); }
 
 // Countdown
-let countdownInterval;
 function startCountdown() {
   function tick() {
     const now = new Date();
@@ -72,7 +71,8 @@ function startCountdown() {
     if (diff <= 0) {
       clearInterval(countdownInterval);
       setCountdown(0);
-      autoCelebrate();
+      // Do NOT auto-celebrate here.
+      heroSub.textContent = "It’s time. Press the button to celebrate! 🎂";
       return;
     }
     setCountdown(diff);
@@ -256,14 +256,12 @@ function autoCelebrate() {
 }
 celebrateBtn.addEventListener("click", () => {
   if (!hasCelebrated) hasCelebrated = true;
-
   heroSub.textContent = "You pressed the magic button. Let’s celebrate!";
   fireConfetti(4000);
   fireBalloons(5000);
   safePlayAudio();
   typeWriter();
 });
-
 function safePlayAudio() {
   audio.play().catch(() => {
     // Some browsers need user interaction; toggle button helps.
@@ -319,6 +317,7 @@ envelope.addEventListener("click", () => {
   quote.textContent = "Memories revealed 💕";
 
 });
+
 
 
 
